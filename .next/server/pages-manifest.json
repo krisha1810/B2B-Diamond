@@ -1,7 +1,10 @@
 {
-  "/_app": "pages/_app.js",
+  "/api/otp": "pages/api/otp.js",
+  "/": "pages/index.html",
   "/_error": "pages/_error.js",
+  "/_app": "pages/_app.js",
+  "/api/realtime-session": "pages/api/realtime-session.js",
+  "/api/diamonds": "pages/api/diamonds.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/api/realtime-session": "pages/api/realtime-session.js"
+  "/404": "pages/404.html"
 }

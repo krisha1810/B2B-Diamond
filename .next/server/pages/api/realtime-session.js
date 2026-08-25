@@ -1,85 +1,305 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/api/realtime-session";
-exports.ids = ["pages/api/realtime-session"];
+exports.id = 367;
+exports.ids = [367];
 exports.modules = {
 
-/***/ "../../../api-utils/node":
-/*!*****************************************************!*\
-  !*** external "next/dist/server/api-utils/node.js" ***!
-  \*****************************************************/
+/***/ 730:
 /***/ ((module) => {
 
 module.exports = require("next/dist/server/api-utils/node.js");
 
 /***/ }),
 
-/***/ "../route-module":
-/*!************************************************************************!*\
-  !*** external "next/dist/server/future/route-modules/route-module.js" ***!
-  \************************************************************************/
+/***/ 76:
 /***/ ((module) => {
 
 module.exports = require("next/dist/server/future/route-modules/route-module.js");
 
 /***/ }),
 
-/***/ "(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js ***!
-  \***********************************************************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-eval("/**\n * Hoists a name from a module or promised module.\n *\n * @param module the module to hoist the name from\n * @param name the name to hoist\n * @returns the value on the module (or promised module)\n */ \nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));\nObject.defineProperty(exports, \"hoist\", ({\n    enumerable: true,\n    get: function() {\n        return hoist;\n    }\n}));\nfunction hoist(module, name) {\n    // If the name is available in the module, return it.\n    if (name in module) {\n        return module[name];\n    }\n    // If a property called `then` exists, assume it's a promise and\n    // return a promise that resolves to the name.\n    if (\"then\" in module && typeof module.then === \"function\") {\n        return module.then((mod)=>hoist(mod, name));\n    }\n    // If we're trying to hoise the default export, and the module is a function,\n    // return the module itself.\n    if (typeof module === \"function\" && name === \"default\") {\n        return module;\n    }\n    // Otherwise, return undefined.\n    return undefined;\n}\n\n//# sourceMappingURL=helpers.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LXJvdXRlLWxvYWRlci9oZWxwZXJzLmpzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLElBQWlCO0FBQ2pCLDhDQUE2QztBQUM3QztBQUNBLENBQUMsRUFBQztBQUNGLHlDQUF3QztBQUN4QztBQUNBO0FBQ0E7QUFDQTtBQUNBLENBQUMsRUFBQztBQUNGO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQSIsInNvdXJjZXMiOlsid2VicGFjazovL2IyYi1kaWFtb25kLXZvaWNlLWFnZW50Ly4vbm9kZV9tb2R1bGVzL25leHQvZGlzdC9idWlsZC93ZWJwYWNrL2xvYWRlcnMvbmV4dC1yb3V0ZS1sb2FkZXIvaGVscGVycy5qcz9mYTQ0Il0sInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogSG9pc3RzIGEgbmFtZSBmcm9tIGEgbW9kdWxlIG9yIHByb21pc2VkIG1vZHVsZS5cbiAqXG4gKiBAcGFyYW0gbW9kdWxlIHRoZSBtb2R1bGUgdG8gaG9pc3QgdGhlIG5hbWUgZnJvbVxuICogQHBhcmFtIG5hbWUgdGhlIG5hbWUgdG8gaG9pc3RcbiAqIEByZXR1cm5zIHRoZSB2YWx1ZSBvbiB0aGUgbW9kdWxlIChvciBwcm9taXNlZCBtb2R1bGUpXG4gKi8gXCJ1c2Ugc3RyaWN0XCI7XG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJob2lzdFwiLCB7XG4gICAgZW51bWVyYWJsZTogdHJ1ZSxcbiAgICBnZXQ6IGZ1bmN0aW9uKCkge1xuICAgICAgICByZXR1cm4gaG9pc3Q7XG4gICAgfVxufSk7XG5mdW5jdGlvbiBob2lzdChtb2R1bGUsIG5hbWUpIHtcbiAgICAvLyBJZiB0aGUgbmFtZSBpcyBhdmFpbGFibGUgaW4gdGhlIG1vZHVsZSwgcmV0dXJuIGl0LlxuICAgIGlmIChuYW1lIGluIG1vZHVsZSkge1xuICAgICAgICByZXR1cm4gbW9kdWxlW25hbWVdO1xuICAgIH1cbiAgICAvLyBJZiBhIHByb3BlcnR5IGNhbGxlZCBgdGhlbmAgZXhpc3RzLCBhc3N1bWUgaXQncyBhIHByb21pc2UgYW5kXG4gICAgLy8gcmV0dXJuIGEgcHJvbWlzZSB0aGF0IHJlc29sdmVzIHRvIHRoZSBuYW1lLlxuICAgIGlmIChcInRoZW5cIiBpbiBtb2R1bGUgJiYgdHlwZW9mIG1vZHVsZS50aGVuID09PSBcImZ1bmN0aW9uXCIpIHtcbiAgICAgICAgcmV0dXJuIG1vZHVsZS50aGVuKChtb2QpPT5ob2lzdChtb2QsIG5hbWUpKTtcbiAgICB9XG4gICAgLy8gSWYgd2UncmUgdHJ5aW5nIHRvIGhvaXNlIHRoZSBkZWZhdWx0IGV4cG9ydCwgYW5kIHRoZSBtb2R1bGUgaXMgYSBmdW5jdGlvbixcbiAgICAvLyByZXR1cm4gdGhlIG1vZHVsZSBpdHNlbGYuXG4gICAgaWYgKHR5cGVvZiBtb2R1bGUgPT09IFwiZnVuY3Rpb25cIiAmJiBuYW1lID09PSBcImRlZmF1bHRcIikge1xuICAgICAgICByZXR1cm4gbW9kdWxlO1xuICAgIH1cbiAgICAvLyBPdGhlcndpc2UsIHJldHVybiB1bmRlZmluZWQuXG4gICAgcmV0dXJuIHVuZGVmaW5lZDtcbn1cblxuLy8jIHNvdXJjZU1hcHBpbmdVUkw9aGVscGVycy5qcy5tYXAiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js\n");
-
-/***/ }),
-
-/***/ "(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Frealtime-session&preferredRegion=&absolutePagePath=.%2Fsrc%5Cpages%5Capi%5Crealtime-session.js&middlewareConfigBase64=e30%3D!":
-/*!********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Frealtime-session&preferredRegion=&absolutePagePath=.%2Fsrc%5Cpages%5Capi%5Crealtime-session.js&middlewareConfigBase64=e30%3D! ***!
-  \********************************************************************************************************************************************************************************************************************************************/
+/***/ 693:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   config: () => (/* binding */ config),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   routeModule: () => (/* binding */ routeModule)\n/* harmony export */ });\n/* harmony import */ var next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/server/future/route-modules/pages-api/module */ \"(api)/./node_modules/next/dist/server/future/route-modules/pages-api/module.js\");\n/* harmony import */ var next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/dist/server/future/route-kind */ \"(api)/./node_modules/next/dist/server/future/route-kind.js\");\n/* harmony import */ var next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-route-loader/helpers */ \"(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js\");\n/* harmony import */ var _src_pages_api_realtime_session_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src\\pages\\api\\realtime-session.js */ \"(api)/./src/pages/api/realtime-session.js\");\n// @ts-ignore this need to be imported from next/dist to be external\n\n\n\nconst PagesAPIRouteModule = next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__.PagesAPIRouteModule;\n// Import the userland code.\n// @ts-expect-error - replaced by webpack/turbopack loader\n\n// Re-export the handler (should be the default export).\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(_src_pages_api_realtime_session_js__WEBPACK_IMPORTED_MODULE_3__, \"default\"));\n// Re-export config.\nconst config = (0,next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(_src_pages_api_realtime_session_js__WEBPACK_IMPORTED_MODULE_3__, \"config\");\n// Create and export the route module that will be consumed.\nconst routeModule = new PagesAPIRouteModule({\n    definition: {\n        kind: next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__.RouteKind.PAGES_API,\n        page: \"/api/realtime-session\",\n        pathname: \"/api/realtime-session\",\n        // The following aren't used in production.\n        bundlePath: \"\",\n        filename: \"\"\n    },\n    userland: _src_pages_api_realtime_session_js__WEBPACK_IMPORTED_MODULE_3__\n});\n\n//# sourceMappingURL=pages-api.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LXJvdXRlLWxvYWRlci9pbmRleC5qcz9raW5kPVBBR0VTX0FQSSZwYWdlPSUyRmFwaSUyRnJlYWx0aW1lLXNlc3Npb24mcHJlZmVycmVkUmVnaW9uPSZhYnNvbHV0ZVBhZ2VQYXRoPS4lMkZzcmMlNUNwYWdlcyU1Q2FwaSU1Q3JlYWx0aW1lLXNlc3Npb24uanMmbWlkZGxld2FyZUNvbmZpZ0Jhc2U2ND1lMzAlM0QhIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQUE7QUFDaUY7QUFDbEI7QUFDbUI7QUFDbEYsNEJBQTRCLHVHQUEwQjtBQUN0RDtBQUNBO0FBQ21FO0FBQ25FO0FBQ0EsaUVBQWUsZ0dBQUssQ0FBQywrREFBUSxZQUFZLEVBQUM7QUFDMUM7QUFDTyxlQUFlLGdHQUFLLENBQUMsK0RBQVE7QUFDcEM7QUFDTztBQUNQO0FBQ0EsY0FBYyx5RUFBUztBQUN2QjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsS0FBSztBQUNMLFlBQVk7QUFDWixDQUFDOztBQUVEIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYjJiLWRpYW1vbmQtdm9pY2UtYWdlbnQvP2JkNjkiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gQHRzLWlnbm9yZSB0aGlzIG5lZWQgdG8gYmUgaW1wb3J0ZWQgZnJvbSBuZXh0L2Rpc3QgdG8gYmUgZXh0ZXJuYWxcbmltcG9ydCAqIGFzIG1vZHVsZSBmcm9tIFwibmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUtbW9kdWxlcy9wYWdlcy1hcGkvbW9kdWxlXCI7XG5pbXBvcnQgeyBSb3V0ZUtpbmQgfSBmcm9tIFwibmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUta2luZFwiO1xuaW1wb3J0IHsgaG9pc3QgfSBmcm9tIFwibmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LXJvdXRlLWxvYWRlci9oZWxwZXJzXCI7XG5jb25zdCBQYWdlc0FQSVJvdXRlTW9kdWxlID0gbW9kdWxlLlBhZ2VzQVBJUm91dGVNb2R1bGU7XG4vLyBJbXBvcnQgdGhlIHVzZXJsYW5kIGNvZGUuXG4vLyBAdHMtZXhwZWN0LWVycm9yIC0gcmVwbGFjZWQgYnkgd2VicGFjay90dXJib3BhY2sgbG9hZGVyXG5pbXBvcnQgKiBhcyB1c2VybGFuZCBmcm9tIFwiLi9zcmNcXFxccGFnZXNcXFxcYXBpXFxcXHJlYWx0aW1lLXNlc3Npb24uanNcIjtcbi8vIFJlLWV4cG9ydCB0aGUgaGFuZGxlciAoc2hvdWxkIGJlIHRoZSBkZWZhdWx0IGV4cG9ydCkuXG5leHBvcnQgZGVmYXVsdCBob2lzdCh1c2VybGFuZCwgXCJkZWZhdWx0XCIpO1xuLy8gUmUtZXhwb3J0IGNvbmZpZy5cbmV4cG9ydCBjb25zdCBjb25maWcgPSBob2lzdCh1c2VybGFuZCwgXCJjb25maWdcIik7XG4vLyBDcmVhdGUgYW5kIGV4cG9ydCB0aGUgcm91dGUgbW9kdWxlIHRoYXQgd2lsbCBiZSBjb25zdW1lZC5cbmV4cG9ydCBjb25zdCByb3V0ZU1vZHVsZSA9IG5ldyBQYWdlc0FQSVJvdXRlTW9kdWxlKHtcbiAgICBkZWZpbml0aW9uOiB7XG4gICAgICAgIGtpbmQ6IFJvdXRlS2luZC5QQUdFU19BUEksXG4gICAgICAgIHBhZ2U6IFwiL2FwaS9yZWFsdGltZS1zZXNzaW9uXCIsXG4gICAgICAgIHBhdGhuYW1lOiBcIi9hcGkvcmVhbHRpbWUtc2Vzc2lvblwiLFxuICAgICAgICAvLyBUaGUgZm9sbG93aW5nIGFyZW4ndCB1c2VkIGluIHByb2R1Y3Rpb24uXG4gICAgICAgIGJ1bmRsZVBhdGg6IFwiXCIsXG4gICAgICAgIGZpbGVuYW1lOiBcIlwiXG4gICAgfSxcbiAgICB1c2VybGFuZFxufSk7XG5cbi8vIyBzb3VyY2VNYXBwaW5nVVJMPXBhZ2VzLWFwaS5qcy5tYXAiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Frealtime-session&preferredRegion=&absolutePagePath=.%2Fsrc%5Cpages%5Capi%5Crealtime-session.js&middlewareConfigBase64=e30%3D!\n");
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
-/***/ }),
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  config: () => (/* binding */ config),
+  "default": () => (/* binding */ next_route_loaderkind_PAGES_API_page_2Fapi_2Frealtime_session_preferredRegion_absolutePagePath_private_next_pages_2Fapi_2Frealtime_session_js_middlewareConfigBase64_e30_3D_),
+  routeModule: () => (/* binding */ routeModule)
+});
 
-/***/ "(api)/./src/pages/api/realtime-session.js":
-/*!*******************************************!*\
-  !*** ./src/pages/api/realtime-session.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+// NAMESPACE OBJECT: ./src/pages/api/realtime-session.js
+var realtime_session_namespaceObject = {};
+__webpack_require__.r(realtime_session_namespaceObject);
+__webpack_require__.d(realtime_session_namespaceObject, {
+  "default": () => (handler)
+});
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ handler)\n/* harmony export */ });\n// API Route to create an ephemeral OpenAI Realtime WebRTC Session Token for Hare Krishna Group B2B Diamond Voice Agent\nasync function handler(req, res) {\n    if (req.method !== \"POST\") {\n        res.setHeader(\"Allow\", [\n            \"POST\"\n        ]);\n        return res.status(405).json({\n            error: \"Method Not Allowed\"\n        });\n    }\n    const apiKey = process.env.OPENAI_API_KEY;\n    if (!apiKey) {\n        return res.status(500).json({\n            error: \"Missing OPENAI_API_KEY on server\"\n        });\n    }\n    const model = process.env.OPENAI_REALTIME_MODEL || \"gpt-realtime\";\n    const voice = process.env.OPENAI_VOICE || \"ash\";\n    const instructions = `You are the official B2B Diamond AI Voice Assistant for Hare Krishna Group (a premier international diamond manufacturer and exporter). Speak clearly with warmth, executive polish, and exact fidelity to the conversation workflow.\n\nCRITICAL VOICE & CONVERSATIONAL RULES:\n1. NO MARKDOWN: Output strictly plain conversational text. Never use asterisks (*), hashtags (#), bullet points (-), or formatting code blocks, as speech synthesis reads them literally.\n2. STRICT STAGE-BY-STAGE SCRIPT FLOW: Always follow the sequential 8-step script flow below.\n3. CONCISE & POLISHED: Keep spoken responses natural, polite, and direct (1-3 sentences per turn).\n\nSTAGE 1: WELCOME & LANGUAGE SELECTION\n- Opening Greeting: \"Welcome to Hare Krishna Group. Which language do you prefer for our conversation today — English or Hindi?\"\n- If the customer specifies \"English\": Respond warmly: \"Thank you. We will proceed in English.\" Then immediately transition to Stage 2.\n- If the customer specifies \"Hindi\": Acknowledge: \"Dhanyavaad. Hum Hindi mein aage badhenge.\" And continue in Hindi following the same steps.\n\nSTAGE 2: CUSTOMER VERIFICATION\n- Ask: \"Before we proceed, I need to verify your account. Please tell me the registered email address associated with your company account.\"\n\nSTAGE 3: EMAIL RECONFIRMATION & SPELLING\n- When the customer provides an email (e.g., alkesh@gmail.com):\n  1. Acknowledge the email: \"Thank you. I heard your email address as: [email].\"\n  2. Spell out the part before the @ sign clearly with hyphens: e.g., \"Let me spell that for you: A – L – K – E – S – H, at Gmail dot com. Is that correct?\"\n- If customer says \"Yes\":\n  - Say: \"Perfect. I will send the verification code to this email address.\"\n  - Invoke the function tool \\`send_otp(email)\\`.\n  - Proceed to Stage 4.\n- If customer says \"No\":\n  - Say: \"No problem. Please say your registered email address again, slowly. You can also spell the part before the at sign.\"\n  - Re-verify and spell out until confirmed.\n\nSTAGE 4: OTP VERIFICATION\n- Say: \"Great. I have sent a 4-digit verification code to your registered email address. Please say the four-digit code when you receive it.\"\n- When the customer says the code:\n  - Invoke the function tool \\`verify_otp(email, otpCode)\\`.\n  - When verified, say: \"Thank you. Your account has been verified successfully. Welcome back. Your registered company is Shine Diamonds.\"\n  - Proceed to Stage 5.\n\nSTAGE 5: MAIN ASSISTANCE MENU\n- Say: \"I can help you search our diamond inventory, check prices and availability, track your orders or shipments, review outstanding payments, schedule a meeting with our sales team, or assist with other account-related queries. How may I help you today?\"\n\nSTAGE 6: DIAMOND INVENTORY SEARCH\n- When customer asks for diamonds (e.g., \"I am looking for a Round diamond, D color, VVS clarity, between 1.05 and 1.30 carats\"):\n  1. Reconfirm requirements: \"Certainly. Let me confirm your requirement. You are looking for: [Shape] shape, [Color] color, [Clarity] clarity, from [MinCarat] to [MaxCarat] carats. Is that correct?\"\n  2. If customer says \"Yes\":\n     - Say: \"Perfect. Please give me a moment while I check our live inventory.\"\n     - Invoke function tool \\`search_diamonds(shape, color, clarity, minCarat, maxCarat)\\`.\n     - When results are returned (e.g. 4 matching diamonds found): Say: \"I found 4 diamonds matching your criteria. Would you like me to read out the options, refine the search, or send the complete details to your registered email address?\"\n\nSTAGE 7: SEND DIAMOND DETAILS\n- When customer requests email delivery (e.g., \"Please send them to my email\"):\n  - Invoke function tool \\`send_diamond_details_email(email, shape, color, clarity, minCarat, maxCarat)\\`.\n  - Say: \"Certainly. I will send the details to your verified email address: [Spelled Email]. The email has been sent successfully with details of all matching diamonds. Is there anything else I can help you with?\"\n\nSTAGE 8: END CONVERSATION\n- When customer indicates they are done (e.g., \"No, that is all\"):\n  - Respond warmly: \"Thank you for contacting Hare Krishna Group. Have a great day. We look forward to assisting you again.\"`;\n    const tools = [\n        {\n            type: \"function\",\n            name: \"send_otp\",\n            description: \"Generates and sends a 4-digit security OTP code to the user's registered company email address.\",\n            parameters: {\n                type: \"object\",\n                properties: {\n                    email: {\n                        type: \"string\",\n                        description: \"Registered email address (e.g., alkesh@gmail.com)\"\n                    }\n                },\n                required: [\n                    \"email\"\n                ]\n            }\n        },\n        {\n            type: \"function\",\n            name: \"verify_otp\",\n            description: \"Verifies the 4-digit code provided by the customer against the issued OTP code.\",\n            parameters: {\n                type: \"object\",\n                properties: {\n                    email: {\n                        type: \"string\",\n                        description: \"User registered email\"\n                    },\n                    otpCode: {\n                        type: \"string\",\n                        description: \"The 4-digit code spoken by the customer\"\n                    }\n                },\n                required: [\n                    \"email\",\n                    \"otpCode\"\n                ]\n            }\n        },\n        {\n            type: \"function\",\n            name: \"search_diamonds\",\n            description: \"Searches Hare Krishna Group live diamond inventory based on shape, color, clarity, and carat range.\",\n            parameters: {\n                type: \"object\",\n                properties: {\n                    shape: {\n                        type: \"string\",\n                        description: \"Diamond shape e.g. Round, Oval, Princess, Emerald, Cushion\"\n                    },\n                    color: {\n                        type: \"string\",\n                        description: \"Color grade e.g. D, E, F, G, H\"\n                    },\n                    clarity: {\n                        type: \"string\",\n                        description: \"Clarity grade e.g. VVS, VVS1, VVS2, VS1, VS2, IF, FL\"\n                    },\n                    minCarat: {\n                        type: \"number\",\n                        description: \"Minimum weight in carats (e.g. 1.05)\"\n                    },\n                    maxCarat: {\n                        type: \"number\",\n                        description: \"Maximum weight in carats (e.g. 1.30)\"\n                    }\n                },\n                required: [\n                    \"shape\"\n                ]\n            }\n        },\n        {\n            type: \"function\",\n            name: \"send_diamond_details_email\",\n            description: \"Sends full diamond specification sheets, GIA certificate numbers, and pricing details to the customer's verified email.\",\n            parameters: {\n                type: \"object\",\n                properties: {\n                    email: {\n                        type: \"string\",\n                        description: \"Customer verified email address\"\n                    },\n                    shape: {\n                        type: \"string\"\n                    },\n                    color: {\n                        type: \"string\"\n                    },\n                    clarity: {\n                        type: \"string\"\n                    },\n                    minCarat: {\n                        type: \"number\"\n                    },\n                    maxCarat: {\n                        type: \"number\"\n                    }\n                },\n                required: [\n                    \"email\"\n                ]\n            }\n        }\n    ];\n    try {\n        const response = await fetch(\"https://api.openai.com/v1/realtime/client_secrets\", {\n            method: \"POST\",\n            headers: {\n                \"Authorization\": `Bearer ${apiKey}`,\n                \"Content-Type\": \"application/json\"\n            },\n            body: JSON.stringify({\n                session: {\n                    type: \"realtime\",\n                    model,\n                    audio: {\n                        input: {\n                            turn_detection: {\n                                type: \"server_vad\",\n                                threshold: 0.65,\n                                prefix_padding_ms: 300,\n                                silence_duration_ms: 650\n                            }\n                        },\n                        output: {\n                            voice: voice\n                        }\n                    },\n                    instructions: instructions,\n                    tools: tools\n                }\n            })\n        });\n        if (!response.ok) {\n            const text = await response.text();\n            return res.status(response.status).send(text);\n        }\n        const data = await response.json();\n        return res.status(200).json({\n            model: data.session?.model || model,\n            client_secret: {\n                value: data.value,\n                expires_at: data.expires_at\n            },\n            instructions: instructions\n        });\n    } catch (err) {\n        console.error(\"Failed to create B2B Diamond realtime session\", err);\n        return res.status(500).json({\n            error: \"Failed to create B2B Diamond realtime session\"\n        });\n    }\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9zcmMvcGFnZXMvYXBpL3JlYWx0aW1lLXNlc3Npb24uanMiLCJtYXBwaW5ncyI6Ijs7OztBQUFBLHVIQUF1SDtBQUV4RyxlQUFlQSxRQUFRQyxHQUFHLEVBQUVDLEdBQUc7SUFDNUMsSUFBSUQsSUFBSUUsTUFBTSxLQUFLLFFBQVE7UUFDekJELElBQUlFLFNBQVMsQ0FBQyxTQUFTO1lBQUM7U0FBTztRQUMvQixPQUFPRixJQUFJRyxNQUFNLENBQUMsS0FBS0MsSUFBSSxDQUFDO1lBQUVDLE9BQU87UUFBcUI7SUFDNUQ7SUFFQSxNQUFNQyxTQUFTQyxRQUFRQyxHQUFHLENBQUNDLGNBQWM7SUFDekMsSUFBSSxDQUFDSCxRQUFRO1FBQ1gsT0FBT04sSUFBSUcsTUFBTSxDQUFDLEtBQUtDLElBQUksQ0FBQztZQUFFQyxPQUFPO1FBQW1DO0lBQzFFO0lBRUEsTUFBTUssUUFBUUgsUUFBUUMsR0FBRyxDQUFDRyxxQkFBcUIsSUFBSTtJQUNuRCxNQUFNQyxRQUFRTCxRQUFRQyxHQUFHLENBQUNLLFlBQVksSUFBSTtJQUUxQyxNQUFNQyxlQUFlLENBQUM7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7NEhBb0RvRyxDQUFDO0lBRTNILE1BQU1DLFFBQVE7UUFDWjtZQUNFQyxNQUFNO1lBQ05DLE1BQU07WUFDTkMsYUFBYTtZQUNiQyxZQUFZO2dCQUNWSCxNQUFNO2dCQUNOSSxZQUFZO29CQUNWQyxPQUFPO3dCQUFFTCxNQUFNO3dCQUFVRSxhQUFhO29CQUFvRDtnQkFDNUY7Z0JBQ0FJLFVBQVU7b0JBQUM7aUJBQVE7WUFDckI7UUFDRjtRQUNBO1lBQ0VOLE1BQU07WUFDTkMsTUFBTTtZQUNOQyxhQUFhO1lBQ2JDLFlBQVk7Z0JBQ1ZILE1BQU07Z0JBQ05JLFlBQVk7b0JBQ1ZDLE9BQU87d0JBQUVMLE1BQU07d0JBQVVFLGFBQWE7b0JBQXdCO29CQUM5REssU0FBUzt3QkFBRVAsTUFBTTt3QkFBVUUsYUFBYTtvQkFBMEM7Z0JBQ3BGO2dCQUNBSSxVQUFVO29CQUFDO29CQUFTO2lCQUFVO1lBQ2hDO1FBQ0Y7UUFDQTtZQUNFTixNQUFNO1lBQ05DLE1BQU07WUFDTkMsYUFBYTtZQUNiQyxZQUFZO2dCQUNWSCxNQUFNO2dCQUNOSSxZQUFZO29CQUNWSSxPQUFPO3dCQUFFUixNQUFNO3dCQUFVRSxhQUFhO29CQUE2RDtvQkFDbkdPLE9BQU87d0JBQUVULE1BQU07d0JBQVVFLGFBQWE7b0JBQWlDO29CQUN2RVEsU0FBUzt3QkFBRVYsTUFBTTt3QkFBVUUsYUFBYTtvQkFBdUQ7b0JBQy9GUyxVQUFVO3dCQUFFWCxNQUFNO3dCQUFVRSxhQUFhO29CQUF1QztvQkFDaEZVLFVBQVU7d0JBQUVaLE1BQU07d0JBQVVFLGFBQWE7b0JBQXVDO2dCQUNsRjtnQkFDQUksVUFBVTtvQkFBQztpQkFBUTtZQUNyQjtRQUNGO1FBQ0E7WUFDRU4sTUFBTTtZQUNOQyxNQUFNO1lBQ05DLGFBQWE7WUFDYkMsWUFBWTtnQkFDVkgsTUFBTTtnQkFDTkksWUFBWTtvQkFDVkMsT0FBTzt3QkFBRUwsTUFBTTt3QkFBVUUsYUFBYTtvQkFBa0M7b0JBQ3hFTSxPQUFPO3dCQUFFUixNQUFNO29CQUFTO29CQUN4QlMsT0FBTzt3QkFBRVQsTUFBTTtvQkFBUztvQkFDeEJVLFNBQVM7d0JBQUVWLE1BQU07b0JBQVM7b0JBQzFCVyxVQUFVO3dCQUFFWCxNQUFNO29CQUFTO29CQUMzQlksVUFBVTt3QkFBRVosTUFBTTtvQkFBUztnQkFDN0I7Z0JBQ0FNLFVBQVU7b0JBQUM7aUJBQVE7WUFDckI7UUFDRjtLQUNEO0lBRUQsSUFBSTtRQUNGLE1BQU1PLFdBQVcsTUFBTUMsTUFBTSxxREFBcUQ7WUFDaEY3QixRQUFRO1lBQ1I4QixTQUFTO2dCQUNQLGlCQUFpQixDQUFDLE9BQU8sRUFBRXpCLE9BQU8sQ0FBQztnQkFDbkMsZ0JBQWdCO1lBQ2xCO1lBQ0EwQixNQUFNQyxLQUFLQyxTQUFTLENBQUM7Z0JBQ25CQyxTQUFTO29CQUNQbkIsTUFBTTtvQkFDTk47b0JBQ0EwQixPQUFPO3dCQUNMQyxPQUFPOzRCQUNMQyxnQkFBZ0I7Z0NBQ2R0QixNQUFNO2dDQUNOdUIsV0FBVztnQ0FDWEMsbUJBQW1CO2dDQUNuQkMscUJBQXFCOzRCQUN2Qjt3QkFDRjt3QkFDQUMsUUFBUTs0QkFDTjlCLE9BQU9BO3dCQUNUO29CQUNGO29CQUNBRSxjQUFjQTtvQkFDZEMsT0FBT0E7Z0JBQ1Q7WUFDRjtRQUNGO1FBRUEsSUFBSSxDQUFDYyxTQUFTYyxFQUFFLEVBQUU7WUFDaEIsTUFBTUMsT0FBTyxNQUFNZixTQUFTZSxJQUFJO1lBQ2hDLE9BQU81QyxJQUFJRyxNQUFNLENBQUMwQixTQUFTMUIsTUFBTSxFQUFFMEMsSUFBSSxDQUFDRDtRQUMxQztRQUVBLE1BQU1FLE9BQU8sTUFBTWpCLFNBQVN6QixJQUFJO1FBQ2hDLE9BQU9KLElBQUlHLE1BQU0sQ0FBQyxLQUFLQyxJQUFJLENBQUM7WUFDMUJNLE9BQU9vQyxLQUFLWCxPQUFPLEVBQUV6QixTQUFTQTtZQUM5QnFDLGVBQWU7Z0JBQ2JDLE9BQU9GLEtBQUtFLEtBQUs7Z0JBQ2pCQyxZQUFZSCxLQUFLRyxVQUFVO1lBQzdCO1lBQ0FuQyxjQUFjQTtRQUNoQjtJQUNGLEVBQUUsT0FBT29DLEtBQUs7UUFDWkMsUUFBUTlDLEtBQUssQ0FBQyxpREFBaUQ2QztRQUMvRCxPQUFPbEQsSUFBSUcsTUFBTSxDQUFDLEtBQUtDLElBQUksQ0FBQztZQUFFQyxPQUFPO1FBQWdEO0lBQ3ZGO0FBQ0YiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9iMmItZGlhbW9uZC12b2ljZS1hZ2VudC8uL3NyYy9wYWdlcy9hcGkvcmVhbHRpbWUtc2Vzc2lvbi5qcz9jMjA3Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIEFQSSBSb3V0ZSB0byBjcmVhdGUgYW4gZXBoZW1lcmFsIE9wZW5BSSBSZWFsdGltZSBXZWJSVEMgU2Vzc2lvbiBUb2tlbiBmb3IgSGFyZSBLcmlzaG5hIEdyb3VwIEIyQiBEaWFtb25kIFZvaWNlIEFnZW50XG5cbmV4cG9ydCBkZWZhdWx0IGFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIocmVxLCByZXMpIHtcbiAgaWYgKHJlcS5tZXRob2QgIT09ICdQT1NUJykge1xuICAgIHJlcy5zZXRIZWFkZXIoJ0FsbG93JywgWydQT1NUJ10pO1xuICAgIHJldHVybiByZXMuc3RhdHVzKDQwNSkuanNvbih7IGVycm9yOiAnTWV0aG9kIE5vdCBBbGxvd2VkJyB9KTtcbiAgfVxuXG4gIGNvbnN0IGFwaUtleSA9IHByb2Nlc3MuZW52Lk9QRU5BSV9BUElfS0VZO1xuICBpZiAoIWFwaUtleSkge1xuICAgIHJldHVybiByZXMuc3RhdHVzKDUwMCkuanNvbih7IGVycm9yOiAnTWlzc2luZyBPUEVOQUlfQVBJX0tFWSBvbiBzZXJ2ZXInIH0pO1xuICB9XG5cbiAgY29uc3QgbW9kZWwgPSBwcm9jZXNzLmVudi5PUEVOQUlfUkVBTFRJTUVfTU9ERUwgfHwgJ2dwdC1yZWFsdGltZSc7XG4gIGNvbnN0IHZvaWNlID0gcHJvY2Vzcy5lbnYuT1BFTkFJX1ZPSUNFIHx8ICdhc2gnO1xuXG4gIGNvbnN0IGluc3RydWN0aW9ucyA9IGBZb3UgYXJlIHRoZSBvZmZpY2lhbCBCMkIgRGlhbW9uZCBBSSBWb2ljZSBBc3Npc3RhbnQgZm9yIEhhcmUgS3Jpc2huYSBHcm91cCAoYSBwcmVtaWVyIGludGVybmF0aW9uYWwgZGlhbW9uZCBtYW51ZmFjdHVyZXIgYW5kIGV4cG9ydGVyKS4gU3BlYWsgY2xlYXJseSB3aXRoIHdhcm10aCwgZXhlY3V0aXZlIHBvbGlzaCwgYW5kIGV4YWN0IGZpZGVsaXR5IHRvIHRoZSBjb252ZXJzYXRpb24gd29ya2Zsb3cuXG5cbkNSSVRJQ0FMIFZPSUNFICYgQ09OVkVSU0FUSU9OQUwgUlVMRVM6XG4xLiBOTyBNQVJLRE9XTjogT3V0cHV0IHN0cmljdGx5IHBsYWluIGNvbnZlcnNhdGlvbmFsIHRleHQuIE5ldmVyIHVzZSBhc3Rlcmlza3MgKCopLCBoYXNodGFncyAoIyksIGJ1bGxldCBwb2ludHMgKC0pLCBvciBmb3JtYXR0aW5nIGNvZGUgYmxvY2tzLCBhcyBzcGVlY2ggc3ludGhlc2lzIHJlYWRzIHRoZW0gbGl0ZXJhbGx5LlxuMi4gU1RSSUNUIFNUQUdFLUJZLVNUQUdFIFNDUklQVCBGTE9XOiBBbHdheXMgZm9sbG93IHRoZSBzZXF1ZW50aWFsIDgtc3RlcCBzY3JpcHQgZmxvdyBiZWxvdy5cbjMuIENPTkNJU0UgJiBQT0xJU0hFRDogS2VlcCBzcG9rZW4gcmVzcG9uc2VzIG5hdHVyYWwsIHBvbGl0ZSwgYW5kIGRpcmVjdCAoMS0zIHNlbnRlbmNlcyBwZXIgdHVybikuXG5cblNUQUdFIDE6IFdFTENPTUUgJiBMQU5HVUFHRSBTRUxFQ1RJT05cbi0gT3BlbmluZyBHcmVldGluZzogXCJXZWxjb21lIHRvIEhhcmUgS3Jpc2huYSBHcm91cC4gV2hpY2ggbGFuZ3VhZ2UgZG8geW91IHByZWZlciBmb3Igb3VyIGNvbnZlcnNhdGlvbiB0b2RheSDigJQgRW5nbGlzaCBvciBIaW5kaT9cIlxuLSBJZiB0aGUgY3VzdG9tZXIgc3BlY2lmaWVzIFwiRW5nbGlzaFwiOiBSZXNwb25kIHdhcm1seTogXCJUaGFuayB5b3UuIFdlIHdpbGwgcHJvY2VlZCBpbiBFbmdsaXNoLlwiIFRoZW4gaW1tZWRpYXRlbHkgdHJhbnNpdGlvbiB0byBTdGFnZSAyLlxuLSBJZiB0aGUgY3VzdG9tZXIgc3BlY2lmaWVzIFwiSGluZGlcIjogQWNrbm93bGVkZ2U6IFwiRGhhbnlhdmFhZC4gSHVtIEhpbmRpIG1laW4gYWFnZSBiYWRoZW5nZS5cIiBBbmQgY29udGludWUgaW4gSGluZGkgZm9sbG93aW5nIHRoZSBzYW1lIHN0ZXBzLlxuXG5TVEFHRSAyOiBDVVNUT01FUiBWRVJJRklDQVRJT05cbi0gQXNrOiBcIkJlZm9yZSB3ZSBwcm9jZWVkLCBJIG5lZWQgdG8gdmVyaWZ5IHlvdXIgYWNjb3VudC4gUGxlYXNlIHRlbGwgbWUgdGhlIHJlZ2lzdGVyZWQgZW1haWwgYWRkcmVzcyBhc3NvY2lhdGVkIHdpdGggeW91ciBjb21wYW55IGFjY291bnQuXCJcblxuU1RBR0UgMzogRU1BSUwgUkVDT05GSVJNQVRJT04gJiBTUEVMTElOR1xuLSBXaGVuIHRoZSBjdXN0b21lciBwcm92aWRlcyBhbiBlbWFpbCAoZS5nLiwgYWxrZXNoQGdtYWlsLmNvbSk6XG4gIDEuIEFja25vd2xlZGdlIHRoZSBlbWFpbDogXCJUaGFuayB5b3UuIEkgaGVhcmQgeW91ciBlbWFpbCBhZGRyZXNzIGFzOiBbZW1haWxdLlwiXG4gIDIuIFNwZWxsIG91dCB0aGUgcGFydCBiZWZvcmUgdGhlIEAgc2lnbiBjbGVhcmx5IHdpdGggaHlwaGVuczogZS5nLiwgXCJMZXQgbWUgc3BlbGwgdGhhdCBmb3IgeW91OiBBIOKAkyBMIOKAkyBLIOKAkyBFIOKAkyBTIOKAkyBILCBhdCBHbWFpbCBkb3QgY29tLiBJcyB0aGF0IGNvcnJlY3Q/XCJcbi0gSWYgY3VzdG9tZXIgc2F5cyBcIlllc1wiOlxuICAtIFNheTogXCJQZXJmZWN0LiBJIHdpbGwgc2VuZCB0aGUgdmVyaWZpY2F0aW9uIGNvZGUgdG8gdGhpcyBlbWFpbCBhZGRyZXNzLlwiXG4gIC0gSW52b2tlIHRoZSBmdW5jdGlvbiB0b29sIFxcYHNlbmRfb3RwKGVtYWlsKVxcYC5cbiAgLSBQcm9jZWVkIHRvIFN0YWdlIDQuXG4tIElmIGN1c3RvbWVyIHNheXMgXCJOb1wiOlxuICAtIFNheTogXCJObyBwcm9ibGVtLiBQbGVhc2Ugc2F5IHlvdXIgcmVnaXN0ZXJlZCBlbWFpbCBhZGRyZXNzIGFnYWluLCBzbG93bHkuIFlvdSBjYW4gYWxzbyBzcGVsbCB0aGUgcGFydCBiZWZvcmUgdGhlIGF0IHNpZ24uXCJcbiAgLSBSZS12ZXJpZnkgYW5kIHNwZWxsIG91dCB1bnRpbCBjb25maXJtZWQuXG5cblNUQUdFIDQ6IE9UUCBWRVJJRklDQVRJT05cbi0gU2F5OiBcIkdyZWF0LiBJIGhhdmUgc2VudCBhIDQtZGlnaXQgdmVyaWZpY2F0aW9uIGNvZGUgdG8geW91ciByZWdpc3RlcmVkIGVtYWlsIGFkZHJlc3MuIFBsZWFzZSBzYXkgdGhlIGZvdXItZGlnaXQgY29kZSB3aGVuIHlvdSByZWNlaXZlIGl0LlwiXG4tIFdoZW4gdGhlIGN1c3RvbWVyIHNheXMgdGhlIGNvZGU6XG4gIC0gSW52b2tlIHRoZSBmdW5jdGlvbiB0b29sIFxcYHZlcmlmeV9vdHAoZW1haWwsIG90cENvZGUpXFxgLlxuICAtIFdoZW4gdmVyaWZpZWQsIHNheTogXCJUaGFuayB5b3UuIFlvdXIgYWNjb3VudCBoYXMgYmVlbiB2ZXJpZmllZCBzdWNjZXNzZnVsbHkuIFdlbGNvbWUgYmFjay4gWW91ciByZWdpc3RlcmVkIGNvbXBhbnkgaXMgU2hpbmUgRGlhbW9uZHMuXCJcbiAgLSBQcm9jZWVkIHRvIFN0YWdlIDUuXG5cblNUQUdFIDU6IE1BSU4gQVNTSVNUQU5DRSBNRU5VXG4tIFNheTogXCJJIGNhbiBoZWxwIHlvdSBzZWFyY2ggb3VyIGRpYW1vbmQgaW52ZW50b3J5LCBjaGVjayBwcmljZXMgYW5kIGF2YWlsYWJpbGl0eSwgdHJhY2sgeW91ciBvcmRlcnMgb3Igc2hpcG1lbnRzLCByZXZpZXcgb3V0c3RhbmRpbmcgcGF5bWVudHMsIHNjaGVkdWxlIGEgbWVldGluZyB3aXRoIG91ciBzYWxlcyB0ZWFtLCBvciBhc3Npc3Qgd2l0aCBvdGhlciBhY2NvdW50LXJlbGF0ZWQgcXVlcmllcy4gSG93IG1heSBJIGhlbHAgeW91IHRvZGF5P1wiXG5cblNUQUdFIDY6IERJQU1PTkQgSU5WRU5UT1JZIFNFQVJDSFxuLSBXaGVuIGN1c3RvbWVyIGFza3MgZm9yIGRpYW1vbmRzIChlLmcuLCBcIkkgYW0gbG9va2luZyBmb3IgYSBSb3VuZCBkaWFtb25kLCBEIGNvbG9yLCBWVlMgY2xhcml0eSwgYmV0d2VlbiAxLjA1IGFuZCAxLjMwIGNhcmF0c1wiKTpcbiAgMS4gUmVjb25maXJtIHJlcXVpcmVtZW50czogXCJDZXJ0YWlubHkuIExldCBtZSBjb25maXJtIHlvdXIgcmVxdWlyZW1lbnQuIFlvdSBhcmUgbG9va2luZyBmb3I6IFtTaGFwZV0gc2hhcGUsIFtDb2xvcl0gY29sb3IsIFtDbGFyaXR5XSBjbGFyaXR5LCBmcm9tIFtNaW5DYXJhdF0gdG8gW01heENhcmF0XSBjYXJhdHMuIElzIHRoYXQgY29ycmVjdD9cIlxuICAyLiBJZiBjdXN0b21lciBzYXlzIFwiWWVzXCI6XG4gICAgIC0gU2F5OiBcIlBlcmZlY3QuIFBsZWFzZSBnaXZlIG1lIGEgbW9tZW50IHdoaWxlIEkgY2hlY2sgb3VyIGxpdmUgaW52ZW50b3J5LlwiXG4gICAgIC0gSW52b2tlIGZ1bmN0aW9uIHRvb2wgXFxgc2VhcmNoX2RpYW1vbmRzKHNoYXBlLCBjb2xvciwgY2xhcml0eSwgbWluQ2FyYXQsIG1heENhcmF0KVxcYC5cbiAgICAgLSBXaGVuIHJlc3VsdHMgYXJlIHJldHVybmVkIChlLmcuIDQgbWF0Y2hpbmcgZGlhbW9uZHMgZm91bmQpOiBTYXk6IFwiSSBmb3VuZCA0IGRpYW1vbmRzIG1hdGNoaW5nIHlvdXIgY3JpdGVyaWEuIFdvdWxkIHlvdSBsaWtlIG1lIHRvIHJlYWQgb3V0IHRoZSBvcHRpb25zLCByZWZpbmUgdGhlIHNlYXJjaCwgb3Igc2VuZCB0aGUgY29tcGxldGUgZGV0YWlscyB0byB5b3VyIHJlZ2lzdGVyZWQgZW1haWwgYWRkcmVzcz9cIlxuXG5TVEFHRSA3OiBTRU5EIERJQU1PTkQgREVUQUlMU1xuLSBXaGVuIGN1c3RvbWVyIHJlcXVlc3RzIGVtYWlsIGRlbGl2ZXJ5IChlLmcuLCBcIlBsZWFzZSBzZW5kIHRoZW0gdG8gbXkgZW1haWxcIik6XG4gIC0gSW52b2tlIGZ1bmN0aW9uIHRvb2wgXFxgc2VuZF9kaWFtb25kX2RldGFpbHNfZW1haWwoZW1haWwsIHNoYXBlLCBjb2xvciwgY2xhcml0eSwgbWluQ2FyYXQsIG1heENhcmF0KVxcYC5cbiAgLSBTYXk6IFwiQ2VydGFpbmx5LiBJIHdpbGwgc2VuZCB0aGUgZGV0YWlscyB0byB5b3VyIHZlcmlmaWVkIGVtYWlsIGFkZHJlc3M6IFtTcGVsbGVkIEVtYWlsXS4gVGhlIGVtYWlsIGhhcyBiZWVuIHNlbnQgc3VjY2Vzc2Z1bGx5IHdpdGggZGV0YWlscyBvZiBhbGwgbWF0Y2hpbmcgZGlhbW9uZHMuIElzIHRoZXJlIGFueXRoaW5nIGVsc2UgSSBjYW4gaGVscCB5b3Ugd2l0aD9cIlxuXG5TVEFHRSA4OiBFTkQgQ09OVkVSU0FUSU9OXG4tIFdoZW4gY3VzdG9tZXIgaW5kaWNhdGVzIHRoZXkgYXJlIGRvbmUgKGUuZy4sIFwiTm8sIHRoYXQgaXMgYWxsXCIpOlxuICAtIFJlc3BvbmQgd2FybWx5OiBcIlRoYW5rIHlvdSBmb3IgY29udGFjdGluZyBIYXJlIEtyaXNobmEgR3JvdXAuIEhhdmUgYSBncmVhdCBkYXkuIFdlIGxvb2sgZm9yd2FyZCB0byBhc3Npc3RpbmcgeW91IGFnYWluLlwiYDtcblxuICBjb25zdCB0b29scyA9IFtcbiAgICB7XG4gICAgICB0eXBlOiBcImZ1bmN0aW9uXCIsXG4gICAgICBuYW1lOiBcInNlbmRfb3RwXCIsXG4gICAgICBkZXNjcmlwdGlvbjogXCJHZW5lcmF0ZXMgYW5kIHNlbmRzIGEgNC1kaWdpdCBzZWN1cml0eSBPVFAgY29kZSB0byB0aGUgdXNlcidzIHJlZ2lzdGVyZWQgY29tcGFueSBlbWFpbCBhZGRyZXNzLlwiLFxuICAgICAgcGFyYW1ldGVyczoge1xuICAgICAgICB0eXBlOiBcIm9iamVjdFwiLFxuICAgICAgICBwcm9wZXJ0aWVzOiB7XG4gICAgICAgICAgZW1haWw6IHsgdHlwZTogXCJzdHJpbmdcIiwgZGVzY3JpcHRpb246IFwiUmVnaXN0ZXJlZCBlbWFpbCBhZGRyZXNzIChlLmcuLCBhbGtlc2hAZ21haWwuY29tKVwiIH1cbiAgICAgICAgfSxcbiAgICAgICAgcmVxdWlyZWQ6IFtcImVtYWlsXCJdXG4gICAgICB9XG4gICAgfSxcbiAgICB7XG4gICAgICB0eXBlOiBcImZ1bmN0aW9uXCIsXG4gICAgICBuYW1lOiBcInZlcmlmeV9vdHBcIixcbiAgICAgIGRlc2NyaXB0aW9uOiBcIlZlcmlmaWVzIHRoZSA0LWRpZ2l0IGNvZGUgcHJvdmlkZWQgYnkgdGhlIGN1c3RvbWVyIGFnYWluc3QgdGhlIGlzc3VlZCBPVFAgY29kZS5cIixcbiAgICAgIHBhcmFtZXRlcnM6IHtcbiAgICAgICAgdHlwZTogXCJvYmplY3RcIixcbiAgICAgICAgcHJvcGVydGllczoge1xuICAgICAgICAgIGVtYWlsOiB7IHR5cGU6IFwic3RyaW5nXCIsIGRlc2NyaXB0aW9uOiBcIlVzZXIgcmVnaXN0ZXJlZCBlbWFpbFwiIH0sXG4gICAgICAgICAgb3RwQ29kZTogeyB0eXBlOiBcInN0cmluZ1wiLCBkZXNjcmlwdGlvbjogXCJUaGUgNC1kaWdpdCBjb2RlIHNwb2tlbiBieSB0aGUgY3VzdG9tZXJcIiB9XG4gICAgICAgIH0sXG4gICAgICAgIHJlcXVpcmVkOiBbXCJlbWFpbFwiLCBcIm90cENvZGVcIl1cbiAgICAgIH1cbiAgICB9LFxuICAgIHtcbiAgICAgIHR5cGU6IFwiZnVuY3Rpb25cIixcbiAgICAgIG5hbWU6IFwic2VhcmNoX2RpYW1vbmRzXCIsXG4gICAgICBkZXNjcmlwdGlvbjogXCJTZWFyY2hlcyBIYXJlIEtyaXNobmEgR3JvdXAgbGl2ZSBkaWFtb25kIGludmVudG9yeSBiYXNlZCBvbiBzaGFwZSwgY29sb3IsIGNsYXJpdHksIGFuZCBjYXJhdCByYW5nZS5cIixcbiAgICAgIHBhcmFtZXRlcnM6IHtcbiAgICAgICAgdHlwZTogXCJvYmplY3RcIixcbiAgICAgICAgcHJvcGVydGllczoge1xuICAgICAgICAgIHNoYXBlOiB7IHR5cGU6IFwic3RyaW5nXCIsIGRlc2NyaXB0aW9uOiBcIkRpYW1vbmQgc2hhcGUgZS5nLiBSb3VuZCwgT3ZhbCwgUHJpbmNlc3MsIEVtZXJhbGQsIEN1c2hpb25cIiB9LFxuICAgICAgICAgIGNvbG9yOiB7IHR5cGU6IFwic3RyaW5nXCIsIGRlc2NyaXB0aW9uOiBcIkNvbG9yIGdyYWRlIGUuZy4gRCwgRSwgRiwgRywgSFwiIH0sXG4gICAgICAgICAgY2xhcml0eTogeyB0eXBlOiBcInN0cmluZ1wiLCBkZXNjcmlwdGlvbjogXCJDbGFyaXR5IGdyYWRlIGUuZy4gVlZTLCBWVlMxLCBWVlMyLCBWUzEsIFZTMiwgSUYsIEZMXCIgfSxcbiAgICAgICAgICBtaW5DYXJhdDogeyB0eXBlOiBcIm51bWJlclwiLCBkZXNjcmlwdGlvbjogXCJNaW5pbXVtIHdlaWdodCBpbiBjYXJhdHMgKGUuZy4gMS4wNSlcIiB9LFxuICAgICAgICAgIG1heENhcmF0OiB7IHR5cGU6IFwibnVtYmVyXCIsIGRlc2NyaXB0aW9uOiBcIk1heGltdW0gd2VpZ2h0IGluIGNhcmF0cyAoZS5nLiAxLjMwKVwiIH1cbiAgICAgICAgfSxcbiAgICAgICAgcmVxdWlyZWQ6IFtcInNoYXBlXCJdXG4gICAgICB9XG4gICAgfSxcbiAgICB7XG4gICAgICB0eXBlOiBcImZ1bmN0aW9uXCIsXG4gICAgICBuYW1lOiBcInNlbmRfZGlhbW9uZF9kZXRhaWxzX2VtYWlsXCIsXG4gICAgICBkZXNjcmlwdGlvbjogXCJTZW5kcyBmdWxsIGRpYW1vbmQgc3BlY2lmaWNhdGlvbiBzaGVldHMsIEdJQSBjZXJ0aWZpY2F0ZSBudW1iZXJzLCBhbmQgcHJpY2luZyBkZXRhaWxzIHRvIHRoZSBjdXN0b21lcidzIHZlcmlmaWVkIGVtYWlsLlwiLFxuICAgICAgcGFyYW1ldGVyczoge1xuICAgICAgICB0eXBlOiBcIm9iamVjdFwiLFxuICAgICAgICBwcm9wZXJ0aWVzOiB7XG4gICAgICAgICAgZW1haWw6IHsgdHlwZTogXCJzdHJpbmdcIiwgZGVzY3JpcHRpb246IFwiQ3VzdG9tZXIgdmVyaWZpZWQgZW1haWwgYWRkcmVzc1wiIH0sXG4gICAgICAgICAgc2hhcGU6IHsgdHlwZTogXCJzdHJpbmdcIiB9LFxuICAgICAgICAgIGNvbG9yOiB7IHR5cGU6IFwic3RyaW5nXCIgfSxcbiAgICAgICAgICBjbGFyaXR5OiB7IHR5cGU6IFwic3RyaW5nXCIgfSxcbiAgICAgICAgICBtaW5DYXJhdDogeyB0eXBlOiBcIm51bWJlclwiIH0sXG4gICAgICAgICAgbWF4Q2FyYXQ6IHsgdHlwZTogXCJudW1iZXJcIiB9XG4gICAgICAgIH0sXG4gICAgICAgIHJlcXVpcmVkOiBbXCJlbWFpbFwiXVxuICAgICAgfVxuICAgIH1cbiAgXTtcblxuICB0cnkge1xuICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goJ2h0dHBzOi8vYXBpLm9wZW5haS5jb20vdjEvcmVhbHRpbWUvY2xpZW50X3NlY3JldHMnLCB7XG4gICAgICBtZXRob2Q6ICdQT1NUJyxcbiAgICAgIGhlYWRlcnM6IHtcbiAgICAgICAgJ0F1dGhvcml6YXRpb24nOiBgQmVhcmVyICR7YXBpS2V5fWAsXG4gICAgICAgICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicsXG4gICAgICB9LFxuICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoe1xuICAgICAgICBzZXNzaW9uOiB7XG4gICAgICAgICAgdHlwZTogXCJyZWFsdGltZVwiLFxuICAgICAgICAgIG1vZGVsLFxuICAgICAgICAgIGF1ZGlvOiB7XG4gICAgICAgICAgICBpbnB1dDoge1xuICAgICAgICAgICAgICB0dXJuX2RldGVjdGlvbjoge1xuICAgICAgICAgICAgICAgIHR5cGU6ICdzZXJ2ZXJfdmFkJyxcbiAgICAgICAgICAgICAgICB0aHJlc2hvbGQ6IDAuNjUsXG4gICAgICAgICAgICAgICAgcHJlZml4X3BhZGRpbmdfbXM6IDMwMCxcbiAgICAgICAgICAgICAgICBzaWxlbmNlX2R1cmF0aW9uX21zOiA2NTAsXG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICBvdXRwdXQ6IHtcbiAgICAgICAgICAgICAgdm9pY2U6IHZvaWNlXG4gICAgICAgICAgICB9XG4gICAgICAgICAgfSxcbiAgICAgICAgICBpbnN0cnVjdGlvbnM6IGluc3RydWN0aW9ucyxcbiAgICAgICAgICB0b29sczogdG9vbHNcbiAgICAgICAgfVxuICAgICAgfSksXG4gICAgfSk7XG5cbiAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICBjb25zdCB0ZXh0ID0gYXdhaXQgcmVzcG9uc2UudGV4dCgpO1xuICAgICAgcmV0dXJuIHJlcy5zdGF0dXMocmVzcG9uc2Uuc3RhdHVzKS5zZW5kKHRleHQpO1xuICAgIH1cblxuICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5qc29uKCk7XG4gICAgcmV0dXJuIHJlcy5zdGF0dXMoMjAwKS5qc29uKHtcbiAgICAgIG1vZGVsOiBkYXRhLnNlc3Npb24/Lm1vZGVsIHx8IG1vZGVsLFxuICAgICAgY2xpZW50X3NlY3JldDoge1xuICAgICAgICB2YWx1ZTogZGF0YS52YWx1ZSxcbiAgICAgICAgZXhwaXJlc19hdDogZGF0YS5leHBpcmVzX2F0XG4gICAgICB9LFxuICAgICAgaW5zdHJ1Y3Rpb25zOiBpbnN0cnVjdGlvbnNcbiAgICB9KTtcbiAgfSBjYXRjaCAoZXJyKSB7XG4gICAgY29uc29sZS5lcnJvcignRmFpbGVkIHRvIGNyZWF0ZSBCMkIgRGlhbW9uZCByZWFsdGltZSBzZXNzaW9uJywgZXJyKTtcbiAgICByZXR1cm4gcmVzLnN0YXR1cyg1MDApLmpzb24oeyBlcnJvcjogJ0ZhaWxlZCB0byBjcmVhdGUgQjJCIERpYW1vbmQgcmVhbHRpbWUgc2Vzc2lvbicgfSk7XG4gIH1cbn1cbiJdLCJuYW1lcyI6WyJoYW5kbGVyIiwicmVxIiwicmVzIiwibWV0aG9kIiwic2V0SGVhZGVyIiwic3RhdHVzIiwianNvbiIsImVycm9yIiwiYXBpS2V5IiwicHJvY2VzcyIsImVudiIsIk9QRU5BSV9BUElfS0VZIiwibW9kZWwiLCJPUEVOQUlfUkVBTFRJTUVfTU9ERUwiLCJ2b2ljZSIsIk9QRU5BSV9WT0lDRSIsImluc3RydWN0aW9ucyIsInRvb2xzIiwidHlwZSIsIm5hbWUiLCJkZXNjcmlwdGlvbiIsInBhcmFtZXRlcnMiLCJwcm9wZXJ0aWVzIiwiZW1haWwiLCJyZXF1aXJlZCIsIm90cENvZGUiLCJzaGFwZSIsImNvbG9yIiwiY2xhcml0eSIsIm1pbkNhcmF0IiwibWF4Q2FyYXQiLCJyZXNwb25zZSIsImZldGNoIiwiaGVhZGVycyIsImJvZHkiLCJKU09OIiwic3RyaW5naWZ5Iiwic2Vzc2lvbiIsImF1ZGlvIiwiaW5wdXQiLCJ0dXJuX2RldGVjdGlvbiIsInRocmVzaG9sZCIsInByZWZpeF9wYWRkaW5nX21zIiwic2lsZW5jZV9kdXJhdGlvbl9tcyIsIm91dHB1dCIsIm9rIiwidGV4dCIsInNlbmQiLCJkYXRhIiwiY2xpZW50X3NlY3JldCIsInZhbHVlIiwiZXhwaXJlc19hdCIsImVyciIsImNvbnNvbGUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./src/pages/api/realtime-session.js\n");
+// EXTERNAL MODULE: ./node_modules/next/dist/server/future/route-modules/pages-api/module.js
+var pages_api_module = __webpack_require__(429);
+// EXTERNAL MODULE: ./node_modules/next/dist/server/future/route-kind.js
+var route_kind = __webpack_require__(153);
+// EXTERNAL MODULE: ./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js
+var helpers = __webpack_require__(305);
+;// CONCATENATED MODULE: ./src/pages/api/realtime-session.js
+// API Route to create an ephemeral OpenAI Realtime WebRTC Session Token for Hare Krishna Group B2B Diamond Voice Agent
+async function handler(req, res) {
+    if (req.method !== "POST") {
+        res.setHeader("Allow", [
+            "POST"
+        ]);
+        return res.status(405).json({
+            error: "Method Not Allowed"
+        });
+    }
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+        return res.status(500).json({
+            error: "Missing OPENAI_API_KEY on server"
+        });
+    }
+    const model = process.env.OPENAI_REALTIME_MODEL || "gpt-realtime";
+    const voice = process.env.OPENAI_VOICE || "ash";
+    const instructions = `You are the official B2B Diamond AI Voice Assistant for Hare Krishna Group (a premier international diamond manufacturer and exporter). Speak clearly with warmth, executive polish, and exact fidelity to the conversation workflow.
 
-/***/ }),
+CRITICAL VOICE & CONVERSATIONAL RULES:
+1. NO MARKDOWN: Output strictly plain conversational text. Never use asterisks (*), hashtags (#), bullet points (-), or formatting code blocks, as speech synthesis reads them literally.
+2. STRICT STAGE-BY-STAGE SCRIPT FLOW: Always follow the sequential 8-step script flow below.
+3. CONCISE & POLISHED: Keep spoken responses natural, polite, and direct (1-3 sentences per turn).
 
-/***/ "(api)/./node_modules/next/dist/server/future/route-kind.js":
-/*!************************************************************!*\
-  !*** ./node_modules/next/dist/server/future/route-kind.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, exports) => {
+STAGE 1: WELCOME & LANGUAGE SELECTION
+- Opening Greeting: "Welcome to Hare Krishna Group. Which language do you prefer for our conversation today — English or Hindi?"
+- If the customer specifies "English": Respond warmly: "Thank you. We will proceed in English." Then immediately transition to Stage 2.
+- If the customer specifies "Hindi": Acknowledge: "Dhanyavaad. Hum Hindi mein aage badhenge." And continue in Hindi following the same steps.
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));\nObject.defineProperty(exports, \"RouteKind\", ({\n    enumerable: true,\n    get: function() {\n        return RouteKind;\n    }\n}));\nvar RouteKind;\n(function(RouteKind) {\n    RouteKind[/**\n   * `PAGES` represents all the React pages that are under `pages/`.\n   */ \"PAGES\"] = \"PAGES\";\n    RouteKind[/**\n   * `PAGES_API` represents all the API routes under `pages/api/`.\n   */ \"PAGES_API\"] = \"PAGES_API\";\n    RouteKind[/**\n   * `APP_PAGE` represents all the React pages that are under `app/` with the\n   * filename of `page.{j,t}s{,x}`.\n   */ \"APP_PAGE\"] = \"APP_PAGE\";\n    RouteKind[/**\n   * `APP_ROUTE` represents all the API routes and metadata routes that are under `app/` with the\n   * filename of `route.{j,t}s{,x}`.\n   */ \"APP_ROUTE\"] = \"APP_ROUTE\";\n})(RouteKind || (RouteKind = {}));\n\n//# sourceMappingURL=route-kind.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUta2luZC5qcyIsIm1hcHBpbmdzIjoiQUFBYTtBQUNiLDhDQUE2QztBQUM3QztBQUNBLENBQUMsRUFBQztBQUNGLDZDQUE0QztBQUM1QztBQUNBO0FBQ0E7QUFDQTtBQUNBLENBQUMsRUFBQztBQUNGO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0Esd0JBQXdCLElBQUksRUFBRSxHQUFHO0FBQ2pDO0FBQ0E7QUFDQTtBQUNBLHlCQUF5QixJQUFJLEVBQUUsR0FBRztBQUNsQztBQUNBLENBQUMsOEJBQThCOztBQUUvQiIsInNvdXJjZXMiOlsid2VicGFjazovL2IyYi1kaWFtb25kLXZvaWNlLWFnZW50Ly4vbm9kZV9tb2R1bGVzL25leHQvZGlzdC9zZXJ2ZXIvZnV0dXJlL3JvdXRlLWtpbmQuanM/NzYwZCJdLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBzdHJpY3RcIjtcbk9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBcIl9fZXNNb2R1bGVcIiwge1xuICAgIHZhbHVlOiB0cnVlXG59KTtcbk9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBcIlJvdXRlS2luZFwiLCB7XG4gICAgZW51bWVyYWJsZTogdHJ1ZSxcbiAgICBnZXQ6IGZ1bmN0aW9uKCkge1xuICAgICAgICByZXR1cm4gUm91dGVLaW5kO1xuICAgIH1cbn0pO1xudmFyIFJvdXRlS2luZDtcbihmdW5jdGlvbihSb3V0ZUtpbmQpIHtcbiAgICBSb3V0ZUtpbmRbLyoqXG4gICAqIGBQQUdFU2AgcmVwcmVzZW50cyBhbGwgdGhlIFJlYWN0IHBhZ2VzIHRoYXQgYXJlIHVuZGVyIGBwYWdlcy9gLlxuICAgKi8gXCJQQUdFU1wiXSA9IFwiUEFHRVNcIjtcbiAgICBSb3V0ZUtpbmRbLyoqXG4gICAqIGBQQUdFU19BUElgIHJlcHJlc2VudHMgYWxsIHRoZSBBUEkgcm91dGVzIHVuZGVyIGBwYWdlcy9hcGkvYC5cbiAgICovIFwiUEFHRVNfQVBJXCJdID0gXCJQQUdFU19BUElcIjtcbiAgICBSb3V0ZUtpbmRbLyoqXG4gICAqIGBBUFBfUEFHRWAgcmVwcmVzZW50cyBhbGwgdGhlIFJlYWN0IHBhZ2VzIHRoYXQgYXJlIHVuZGVyIGBhcHAvYCB3aXRoIHRoZVxuICAgKiBmaWxlbmFtZSBvZiBgcGFnZS57aix0fXN7LHh9YC5cbiAgICovIFwiQVBQX1BBR0VcIl0gPSBcIkFQUF9QQUdFXCI7XG4gICAgUm91dGVLaW5kWy8qKlxuICAgKiBgQVBQX1JPVVRFYCByZXByZXNlbnRzIGFsbCB0aGUgQVBJIHJvdXRlcyBhbmQgbWV0YWRhdGEgcm91dGVzIHRoYXQgYXJlIHVuZGVyIGBhcHAvYCB3aXRoIHRoZVxuICAgKiBmaWxlbmFtZSBvZiBgcm91dGUue2osdH1zeyx4fWAuXG4gICAqLyBcIkFQUF9ST1VURVwiXSA9IFwiQVBQX1JPVVRFXCI7XG59KShSb3V0ZUtpbmQgfHwgKFJvdXRlS2luZCA9IHt9KSk7XG5cbi8vIyBzb3VyY2VNYXBwaW5nVVJMPXJvdXRlLWtpbmQuanMubWFwIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/server/future/route-kind.js\n");
+STAGE 2: CUSTOMER VERIFICATION
+- Ask: "Before we proceed, I need to verify your account. Please tell me the registered email address associated with your company account."
 
-/***/ }),
+STAGE 3: EMAIL RECONFIRMATION & SPELLING
+- When the customer provides an email (e.g., alkesh@gmail.com):
+  1. Acknowledge the email: "Thank you. I heard your email address as: [email]."
+  2. Spell out the part before the @ sign clearly with hyphens: e.g., "Let me spell that for you: A – L – K – E – S – H, at Gmail dot com. Is that correct?"
+- If customer says "Yes":
+  - Say: "Perfect. I will send the verification code to this email address."
+  - Invoke the function tool \`send_otp(email)\`.
+  - Proceed to Stage 4.
+- If customer says "No":
+  - Say: "No problem. Please say your registered email address again, slowly. You can also spell the part before the at sign."
+  - Re-verify and spell out until confirmed.
 
-/***/ "(api)/./node_modules/next/dist/server/future/route-modules/pages-api/module.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/next/dist/server/future/route-modules/pages-api/module.js ***!
-  \********************************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+STAGE 4: OTP VERIFICATION
+- Say: "Great. I have sent a 4-digit verification code to your registered email address. Please say the four-digit code when you receive it."
+- When the customer says the code:
+  - Invoke the function tool \`verify_otp(email, otpCode)\`.
+  - When verified, say: "Thank you. Your account has been verified successfully. Welcome back. Your registered company is Shine Diamonds."
+  - Proceed to Stage 5.
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));\n0 && (0);\nfunction _export(target, all) {\n    for(var name in all)Object.defineProperty(target, name, {\n        enumerable: true,\n        get: all[name]\n    });\n}\n_export(exports, {\n    PagesAPIRouteModule: function() {\n        return PagesAPIRouteModule;\n    },\n    default: function() {\n        return _default;\n    }\n});\nconst _routemodule = __webpack_require__(/*! ../route-module */ \"../route-module\");\nconst _node = __webpack_require__(/*! ../../../api-utils/node */ \"../../../api-utils/node\");\nclass PagesAPIRouteModule extends _routemodule.RouteModule {\n    /**\n   *\n   * @param req the incoming server request\n   * @param res the outgoing server response\n   * @param context the context for the render\n   */ async render(req, res, context) {\n        await (0, _node.apiResolver)(req, res, context.query, this.userland, {\n            ...context.previewProps,\n            revalidate: context.revalidate,\n            trustHostHeader: context.trustHostHeader,\n            allowedRevalidateHeaderKeys: context.allowedRevalidateHeaderKeys,\n            hostname: context.hostname\n        }, context.minimalMode, context.dev, context.page);\n    }\n}\nconst _default = PagesAPIRouteModule;\n\n//# sourceMappingURL=module.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUtbW9kdWxlcy9wYWdlcy1hcGkvbW9kdWxlLmpzIiwibWFwcGluZ3MiOiJBQUFhO0FBQ2IsOENBQTZDO0FBQzdDO0FBQ0EsQ0FBQyxFQUFDO0FBQ0YsTUFBTSxDQUdMO0FBQ0Q7QUFDQTtBQUNBO0FBQ0E7QUFDQSxLQUFLO0FBQ0w7QUFDQTtBQUNBO0FBQ0E7QUFDQSxLQUFLO0FBQ0w7QUFDQTtBQUNBO0FBQ0EsQ0FBQztBQUNELHFCQUFxQixtQkFBTyxDQUFDLHdDQUFpQjtBQUM5QyxjQUFjLG1CQUFPLENBQUMsd0RBQXlCO0FBQy9DO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsU0FBUztBQUNUO0FBQ0E7QUFDQTs7QUFFQSIsInNvdXJjZXMiOlsid2VicGFjazovL2IyYi1kaWFtb25kLXZvaWNlLWFnZW50Ly4vbm9kZV9tb2R1bGVzL25leHQvZGlzdC9zZXJ2ZXIvZnV0dXJlL3JvdXRlLW1vZHVsZXMvcGFnZXMtYXBpL21vZHVsZS5qcz8xMmE3Il0sInNvdXJjZXNDb250ZW50IjpbIlwidXNlIHN0cmljdFwiO1xuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gICAgdmFsdWU6IHRydWVcbn0pO1xuMCAmJiAobW9kdWxlLmV4cG9ydHMgPSB7XG4gICAgUGFnZXNBUElSb3V0ZU1vZHVsZTogbnVsbCxcbiAgICBkZWZhdWx0OiBudWxsXG59KTtcbmZ1bmN0aW9uIF9leHBvcnQodGFyZ2V0LCBhbGwpIHtcbiAgICBmb3IodmFyIG5hbWUgaW4gYWxsKU9iamVjdC5kZWZpbmVQcm9wZXJ0eSh0YXJnZXQsIG5hbWUsIHtcbiAgICAgICAgZW51bWVyYWJsZTogdHJ1ZSxcbiAgICAgICAgZ2V0OiBhbGxbbmFtZV1cbiAgICB9KTtcbn1cbl9leHBvcnQoZXhwb3J0cywge1xuICAgIFBhZ2VzQVBJUm91dGVNb2R1bGU6IGZ1bmN0aW9uKCkge1xuICAgICAgICByZXR1cm4gUGFnZXNBUElSb3V0ZU1vZHVsZTtcbiAgICB9LFxuICAgIGRlZmF1bHQ6IGZ1bmN0aW9uKCkge1xuICAgICAgICByZXR1cm4gX2RlZmF1bHQ7XG4gICAgfVxufSk7XG5jb25zdCBfcm91dGVtb2R1bGUgPSByZXF1aXJlKFwiLi4vcm91dGUtbW9kdWxlXCIpO1xuY29uc3QgX25vZGUgPSByZXF1aXJlKFwiLi4vLi4vLi4vYXBpLXV0aWxzL25vZGVcIik7XG5jbGFzcyBQYWdlc0FQSVJvdXRlTW9kdWxlIGV4dGVuZHMgX3JvdXRlbW9kdWxlLlJvdXRlTW9kdWxlIHtcbiAgICAvKipcbiAgICpcbiAgICogQHBhcmFtIHJlcSB0aGUgaW5jb21pbmcgc2VydmVyIHJlcXVlc3RcbiAgICogQHBhcmFtIHJlcyB0aGUgb3V0Z29pbmcgc2VydmVyIHJlc3BvbnNlXG4gICAqIEBwYXJhbSBjb250ZXh0IHRoZSBjb250ZXh0IGZvciB0aGUgcmVuZGVyXG4gICAqLyBhc3luYyByZW5kZXIocmVxLCByZXMsIGNvbnRleHQpIHtcbiAgICAgICAgYXdhaXQgKDAsIF9ub2RlLmFwaVJlc29sdmVyKShyZXEsIHJlcywgY29udGV4dC5xdWVyeSwgdGhpcy51c2VybGFuZCwge1xuICAgICAgICAgICAgLi4uY29udGV4dC5wcmV2aWV3UHJvcHMsXG4gICAgICAgICAgICByZXZhbGlkYXRlOiBjb250ZXh0LnJldmFsaWRhdGUsXG4gICAgICAgICAgICB0cnVzdEhvc3RIZWFkZXI6IGNvbnRleHQudHJ1c3RIb3N0SGVhZGVyLFxuICAgICAgICAgICAgYWxsb3dlZFJldmFsaWRhdGVIZWFkZXJLZXlzOiBjb250ZXh0LmFsbG93ZWRSZXZhbGlkYXRlSGVhZGVyS2V5cyxcbiAgICAgICAgICAgIGhvc3RuYW1lOiBjb250ZXh0Lmhvc3RuYW1lXG4gICAgICAgIH0sIGNvbnRleHQubWluaW1hbE1vZGUsIGNvbnRleHQuZGV2LCBjb250ZXh0LnBhZ2UpO1xuICAgIH1cbn1cbmNvbnN0IF9kZWZhdWx0ID0gUGFnZXNBUElSb3V0ZU1vZHVsZTtcblxuLy8jIHNvdXJjZU1hcHBpbmdVUkw9bW9kdWxlLmpzLm1hcCJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/server/future/route-modules/pages-api/module.js\n");
+STAGE 5: MAIN ASSISTANCE MENU
+- Say: "I can help you search our diamond inventory, check prices and availability, track your orders or shipments, review outstanding payments, schedule a meeting with our sales team, or assist with other account-related queries. How may I help you today?"
+
+STAGE 6: DIAMOND INVENTORY SEARCH
+- When customer asks for diamonds (e.g., "I am looking for a Round diamond, D color, VVS clarity, between 1.05 and 1.30 carats"):
+  1. Reconfirm requirements: "Certainly. Let me confirm your requirement. You are looking for: [Shape] shape, [Color] color, [Clarity] clarity, from [MinCarat] to [MaxCarat] carats. Is that correct?"
+  2. If customer says "Yes":
+     - Say: "Perfect. Please give me a moment while I check our live inventory."
+     - Invoke function tool \`search_diamonds(shape, color, clarity, minCarat, maxCarat)\`.
+     - When results are returned (e.g. 4 matching diamonds found): Say: "I found 4 diamonds matching your criteria. Would you like me to read out the options, refine the search, or send the complete details to your registered email address?"
+
+STAGE 7: SEND DIAMOND DETAILS
+- When customer requests email delivery (e.g., "Please send them to my email"):
+  - Invoke function tool \`send_diamond_details_email(email, shape, color, clarity, minCarat, maxCarat)\`.
+  - Say: "Certainly. I will send the details to your verified email address: [Spelled Email]. The email has been sent successfully with details of all matching diamonds. Is there anything else I can help you with?"
+
+STAGE 8: END CONVERSATION
+- When customer indicates they are done (e.g., "No, that is all"):
+  - Respond warmly: "Thank you for contacting Hare Krishna Group. Have a great day. We look forward to assisting you again."`;
+    const tools = [
+        {
+            type: "function",
+            name: "send_otp",
+            description: "Generates and sends a 4-digit security OTP code to the user's registered company email address.",
+            parameters: {
+                type: "object",
+                properties: {
+                    email: {
+                        type: "string",
+                        description: "Registered email address (e.g., alkesh@gmail.com)"
+                    }
+                },
+                required: [
+                    "email"
+                ]
+            }
+        },
+        {
+            type: "function",
+            name: "verify_otp",
+            description: "Verifies the 4-digit code provided by the customer against the issued OTP code.",
+            parameters: {
+                type: "object",
+                properties: {
+                    email: {
+                        type: "string",
+                        description: "User registered email"
+                    },
+                    otpCode: {
+                        type: "string",
+                        description: "The 4-digit code spoken by the customer"
+                    }
+                },
+                required: [
+                    "email",
+                    "otpCode"
+                ]
+            }
+        },
+        {
+            type: "function",
+            name: "search_diamonds",
+            description: "Searches Hare Krishna Group live diamond inventory based on shape, color, clarity, and carat range.",
+            parameters: {
+                type: "object",
+                properties: {
+                    shape: {
+                        type: "string",
+                        description: "Diamond shape e.g. Round, Oval, Princess, Emerald, Cushion"
+                    },
+                    color: {
+                        type: "string",
+                        description: "Color grade e.g. D, E, F, G, H"
+                    },
+                    clarity: {
+                        type: "string",
+                        description: "Clarity grade e.g. VVS, VVS1, VVS2, VS1, VS2, IF, FL"
+                    },
+                    minCarat: {
+                        type: "number",
+                        description: "Minimum weight in carats (e.g. 1.05)"
+                    },
+                    maxCarat: {
+                        type: "number",
+                        description: "Maximum weight in carats (e.g. 1.30)"
+                    }
+                },
+                required: [
+                    "shape"
+                ]
+            }
+        },
+        {
+            type: "function",
+            name: "send_diamond_details_email",
+            description: "Sends full diamond specification sheets, GIA certificate numbers, and pricing details to the customer's verified email.",
+            parameters: {
+                type: "object",
+                properties: {
+                    email: {
+                        type: "string",
+                        description: "Customer verified email address"
+                    },
+                    shape: {
+                        type: "string"
+                    },
+                    color: {
+                        type: "string"
+                    },
+                    clarity: {
+                        type: "string"
+                    },
+                    minCarat: {
+                        type: "number"
+                    },
+                    maxCarat: {
+                        type: "number"
+                    }
+                },
+                required: [
+                    "email"
+                ]
+            }
+        }
+    ];
+    try {
+        const response = await fetch("https://api.openai.com/v1/realtime/client_secrets", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${apiKey}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                session: {
+                    type: "realtime",
+                    model,
+                    audio: {
+                        input: {
+                            turn_detection: {
+                                type: "server_vad",
+                                threshold: 0.65,
+                                prefix_padding_ms: 300,
+                                silence_duration_ms: 650
+                            }
+                        },
+                        output: {
+                            voice: voice
+                        }
+                    },
+                    instructions: instructions,
+                    tools: tools
+                }
+            })
+        });
+        if (!response.ok) {
+            const text = await response.text();
+            return res.status(response.status).send(text);
+        }
+        const data = await response.json();
+        return res.status(200).json({
+            model: data.session?.model || model,
+            client_secret: {
+                value: data.value,
+                expires_at: data.expires_at
+            },
+            instructions: instructions
+        });
+    } catch (err) {
+        console.error("Failed to create B2B Diamond realtime session", err);
+        return res.status(500).json({
+            error: "Failed to create B2B Diamond realtime session"
+        });
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Frealtime-session&preferredRegion=&absolutePagePath=private-next-pages%2Fapi%2Frealtime-session.js&middlewareConfigBase64=e30%3D!
+// @ts-ignore this need to be imported from next/dist to be external
+
+
+
+const PagesAPIRouteModule = pages_api_module.PagesAPIRouteModule;
+// Import the userland code.
+// @ts-expect-error - replaced by webpack/turbopack loader
+
+// Re-export the handler (should be the default export).
+/* harmony default export */ const next_route_loaderkind_PAGES_API_page_2Fapi_2Frealtime_session_preferredRegion_absolutePagePath_private_next_pages_2Fapi_2Frealtime_session_js_middlewareConfigBase64_e30_3D_ = ((0,helpers/* hoist */.l)(realtime_session_namespaceObject, "default"));
+// Re-export config.
+const config = (0,helpers/* hoist */.l)(realtime_session_namespaceObject, "config");
+// Create and export the route module that will be consumed.
+const routeModule = new PagesAPIRouteModule({
+    definition: {
+        kind: route_kind/* RouteKind */.x.PAGES_API,
+        page: "/api/realtime-session",
+        pathname: "/api/realtime-session",
+        // The following aren't used in production.
+        bundlePath: "",
+        filename: ""
+    },
+    userland: realtime_session_namespaceObject
+});
+
+//# sourceMappingURL=pages-api.js.map
 
 /***/ })
 
@@ -90,7 +310,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));
 var __webpack_require__ = require("../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Frealtime-session&preferredRegion=&absolutePagePath=.%2Fsrc%5Cpages%5Capi%5Crealtime-session.js&middlewareConfigBase64=e30%3D!"));
+var __webpack_exports__ = __webpack_require__.X(0, [172], () => (__webpack_exec__(693)));
 module.exports = __webpack_exports__;
 
 })();
